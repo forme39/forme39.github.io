@@ -4,6 +4,45 @@
   
   
   <entry>
+    <title>vue开发踩坑</title>
+    <link href="/2021/07/18/vue%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/"/>
+    <url>/2021/07/18/vue%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</url>
+    
+    <content type="html"><![CDATA[<p>1.使用值需在vue.script data中初始化 否则会当作html文本输出</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ajax重点</title>
+    <link href="/2021/07/18/ajax%E9%87%8D%E7%82%B9/"/>
+    <url>/2021/07/18/ajax%E9%87%8D%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>1.ajax请求需要ResponseEntity返回类或者设置@ResponseBody<br>modelandview中setviewname可以设置跳转地址<br>2.ajax请求请求modelandview类型 返回的是setviewname的html<br>3.ajax获取返回类型为map的值时，需要变换返回值为json格式，如var result = JSON.parse(data);</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>微信小程序踩坑</title>
+    <link href="/2021/07/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91/"/>
+    <url>/2021/07/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91/</url>
+    
+    <content type="html"><![CDATA[<ol><li>使用formsubmit提交表单 e.detail.value为空</li><li>提交的表单不能超过1个input</li><li>wxml使用data-id来存值 js用e.currentTarget.dataset.id来取值</li><li>在当前页面执行操作，需要刷新时，this.onload方法会报错，使用的是navigateBack方法</li><li>在退出登录时 清空用户信息后 通过检测用户信息不存在来清空界面行不通，<br>因为tabbar不能跳转到tabbar的界面，所以切换时更新数据使用的是onshow，所以直接清空请求得到的数据更妥当</li><li>请求数据时，应该将请求到的数据保存到that数据域中，因为函数中和函数外数据区域不相同</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2021/07/18/hello-world/"/>
     <url>/2021/07/18/hello-world/</url>
