@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title><![CDATA[使用qqbot]]></title>
+      <url>/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/</url>
+      <content type="html"><![CDATA[<p>找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[初识渗透]]></title>
+      <url>/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/</url>
+      <content type="html"><![CDATA[<p>自从小时候接触到互联网，就很向往黑客，能够通过各种技术破解层层安全网，控制目标主机。</p>
+<p>这几天自搭环境，尝试了使用kali通过永恒之蓝漏洞实现对win7 x64的控制，大概就是使用msfconsole选择meterpreter和payload，拿到权限后可执行exe，开启服务，实现入侵。测试时发现没有win7 32位系统可利用的永恒之蓝漏洞，找到了论坛上有自制的，但尝试失败。<br>这次渗透的尝试算是当了一次脚本小子，有一点收获，得知了打补丁的重要性，并关注大型0day漏洞</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[vue开发踩坑]]></title>
       <url>/2021/07/18/vue%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</url>
       <content type="html"><![CDATA[<p>1.使用值需在vue.script data中初始化 否则会当作html文本输出</p>
