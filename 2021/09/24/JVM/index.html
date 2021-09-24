@@ -18,7 +18,7 @@
   <meta name="author" content="��">
   <meta name="keywords" content="">
   
-  <title>使用qqbot - forme39</title>
+  <title>forme39</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="使用qqbot">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-28 15:20" pubdate>
-        2021年7月28日 下午
+      <time datetime="2021-09-24 15:53" pubdate>
+        2021年9月24日 下午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      90 字
+      1k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      10
        分钟
     </span>
   
@@ -225,10 +225,81 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">使用qqbot</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用</p>
+              <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><ol>
+<li>程序计数器</li>
+<li>Java虚拟机栈</li>
+<li>本地方法栈</li>
+<li>堆</li>
+<li>方法区</li>
+</ol>
+<ul>
+<li>1.8相较于1.7，永久代被元数据区取代；最大区别是，元数据区并不在虚拟机中，在本地内存中</li>
+</ul>
+<ul>
+<li><p>程序计数器</p>
+<p>用于记录当前线程所执行的字节码指令的地址，若线程执行本地方法，则为undefined</p>
+</li>
+<li><p>Java虚拟机栈</p>
+<p>给每一个即将运行的 Java 方法创建“栈帧”，用于存放该方法运行过程中的一些信息</p>
+<ul>
+<li>局部变量表</li>
+<li>操作数栈</li>
+<li>动态链接</li>
+<li>方法出口信息</li>
+</ul>
+<p>压栈出栈过程</p>
+<p>当方法运行中需要创建局部变量时，就把局部变量存入局部变量表中</p>
+<h5 id="Java-虚拟机栈的特点"><a href="#Java-虚拟机栈的特点" class="headerlink" title="Java 虚拟机栈的特点"></a>Java 虚拟机栈的特点</h5><ul>
+<li>局部变量表随着栈帧的创建而创建，它的大小在编译时确定，创建时只需分配事先规定的大小即可。在方法运行过程中，局部变量表的大小不会发生改变。</li>
+<li>Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。<ul>
+<li>StackOverFlowError 若 Java 虚拟机栈的大小不允许动态扩展，那么当线程请求栈的深度超过当前 Java 虚拟机栈的最大深度时，抛出 StackOverFlowError 异常。</li>
+<li>OutOfMemoryError 若允许动态扩展，那么当线程请求栈时内存用完了，无法再动态扩展时，抛出 OutOfMemoryError 异常。</li>
+</ul>
+</li>
+<li>Java 虚拟机栈也是线程私有，随着线程创建而创建，随着线程的结束而销毁。</li>
+</ul>
+<blockquote>
+<p>出现 StackOverFlowError 时，内存空间可能还有很多。</p>
+</blockquote>
+</li>
+<li><p>堆</p>
+<p>堆是用来存放对象的内存空间，几乎所有对象都存放在堆中</p>
+<h5 id="堆的特点"><a href="#堆的特点" class="headerlink" title="堆的特点"></a>堆的特点</h5><ul>
+<li>线程共享 整个虚拟机只有一个堆，所有线程访问同一个堆，而PC、Java虚拟栈、本地方法栈都是一个线程对应一个</li>
+<li>在虚拟机启动时创建</li>
+<li>是垃圾回收的主要场所</li>
+<li>进一步可分为新生代（Eden区：From Survivor，To Survivor） 老年代</li>
+</ul>
+<p>不同的区域存放不同生命周期的对象，这样可以根据不同的区域使用不同的垃圾回收算法，更有针对性</p>
+<p>堆的大小既可以固定也可以扩展，但对于主流的虚拟机，堆的大小是可扩展的，因此当线程请求分配内存，但堆已满，且内存已无法再扩展时，就抛出 OutOfMemoryError 异常。</p>
+<blockquote>
+<p>Java 堆所使用的内存不需要保证是连续的。而由于堆是被所有线程共享的，所以对它的访问需要注意同步问题，方法和对应的属性都需要保证一致性。</p>
+</blockquote>
+</li>
+<li><p>方法区</p>
+<p>方法区是堆的一个逻辑部分</p>
+<ul>
+<li>已经被虚拟机加载的类信息</li>
+<li>常量</li>
+<li>静态变量</li>
+<li>即时编译器编译后的代码</li>
+</ul>
+<h5 id="方法区的特点"><a href="#方法区的特点" class="headerlink" title="方法区的特点"></a>方法区的特点</h5><ul>
+<li>线程共享，因为是堆的逻辑部分</li>
+<li>永久代。方法区中的信息一般需要长期存在，而且它又是堆的逻辑分区，因此用堆的划分方法，把方法区称为“永久代”。</li>
+<li>内存回收效率低。 方法区中的信息一般需要长期存在，回收一遍之后可能只有少量信息无效。主要回收目标是：对常量池的回收；对类型的卸载。</li>
+<li>Java 虚拟机规范对方法区的要求比较宽松。 和堆一样，允许固定大小，也允许动态扩展，还允许不实现垃圾回收。</li>
+</ul>
+<p>运行时常量池</p>
+<p>方法区中存放类信息 常量 静态变量 即时编译器编译后的代码</p>
+<p>常量存放在运行时常量池中</p>
+<p>当类被 Java 虚拟机加载后， .class 文件中的常量就存放在方法区的运行时常量池中。而且在运行期间，可以向常量池中添加新的常量。如 String 类的 <code>intern()</code> 方法就能在运行期间向常量池中添加字符串常量。</p>
+</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/i-beta/1377625/201911/1377625-20191124233524095-2135873909.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 
             </div>
             <hr>
@@ -249,7 +320,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/24/%E5%AE%B9%E5%99%A8/">
+                      <a href="/2021/09/24/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
@@ -259,8 +330,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/">
-                        <span class="hidden-mobile">初识渗透</span>
+                      <a href="/2021/09/24/%E5%AE%B9%E5%99%A8/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
