@@ -4,37 +4,11 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2021/09/24/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
-    <url>/2021/09/24/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
+    <title>B站HEVC硬解</title>
+    <link href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
+    <url>/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
     
-    <content type="html"><![CDATA[<h1 id="B站HEVC硬解"><a href="#B站HEVC硬解" class="headerlink" title="B站HEVC硬解"></a>B站HEVC硬解</h1><p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="C:\Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2021/09/24/JVM/"/>
-    <url>/2021/09/24/JVM/</url>
-    
-    <content type="html"><![CDATA[<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><ol><li>程序计数器</li><li>Java虚拟机栈</li><li>本地方法栈</li><li>堆</li><li>方法区</li></ol><ul><li>1.8相较于1.7，永久代被元数据区取代；最大区别是，元数据区并不在虚拟机中，在本地内存中</li></ul><ul><li><p>程序计数器</p><p>用于记录当前线程所执行的字节码指令的地址，若线程执行本地方法，则为undefined</p></li><li><p>Java虚拟机栈</p><p>给每一个即将运行的 Java 方法创建“栈帧”，用于存放该方法运行过程中的一些信息</p><ul><li>局部变量表</li><li>操作数栈</li><li>动态链接</li><li>方法出口信息</li></ul><p>压栈出栈过程</p><p>当方法运行中需要创建局部变量时，就把局部变量存入局部变量表中</p><h5 id="Java-虚拟机栈的特点"><a href="#Java-虚拟机栈的特点" class="headerlink" title="Java 虚拟机栈的特点"></a>Java 虚拟机栈的特点</h5><ul><li>局部变量表随着栈帧的创建而创建，它的大小在编译时确定，创建时只需分配事先规定的大小即可。在方法运行过程中，局部变量表的大小不会发生改变。</li><li>Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。<ul><li>StackOverFlowError 若 Java 虚拟机栈的大小不允许动态扩展，那么当线程请求栈的深度超过当前 Java 虚拟机栈的最大深度时，抛出 StackOverFlowError 异常。</li><li>OutOfMemoryError 若允许动态扩展，那么当线程请求栈时内存用完了，无法再动态扩展时，抛出 OutOfMemoryError 异常。</li></ul></li><li>Java 虚拟机栈也是线程私有，随着线程创建而创建，随着线程的结束而销毁。</li></ul><blockquote><p>出现 StackOverFlowError 时，内存空间可能还有很多。</p></blockquote></li><li><p>堆</p><p>堆是用来存放对象的内存空间，几乎所有对象都存放在堆中</p><h5 id="堆的特点"><a href="#堆的特点" class="headerlink" title="堆的特点"></a>堆的特点</h5><ul><li>线程共享 整个虚拟机只有一个堆，所有线程访问同一个堆，而PC、Java虚拟栈、本地方法栈都是一个线程对应一个</li><li>在虚拟机启动时创建</li><li>是垃圾回收的主要场所</li><li>进一步可分为新生代（Eden区：From Survivor，To Survivor） 老年代</li></ul><p>不同的区域存放不同生命周期的对象，这样可以根据不同的区域使用不同的垃圾回收算法，更有针对性</p><p>堆的大小既可以固定也可以扩展，但对于主流的虚拟机，堆的大小是可扩展的，因此当线程请求分配内存，但堆已满，且内存已无法再扩展时，就抛出 OutOfMemoryError 异常。</p><blockquote><p>Java 堆所使用的内存不需要保证是连续的。而由于堆是被所有线程共享的，所以对它的访问需要注意同步问题，方法和对应的属性都需要保证一致性。</p></blockquote></li><li><p>方法区</p><p>方法区是堆的一个逻辑部分</p><ul><li>已经被虚拟机加载的类信息</li><li>常量</li><li>静态变量</li><li>即时编译器编译后的代码</li></ul><h5 id="方法区的特点"><a href="#方法区的特点" class="headerlink" title="方法区的特点"></a>方法区的特点</h5><ul><li>线程共享，因为是堆的逻辑部分</li><li>永久代。方法区中的信息一般需要长期存在，而且它又是堆的逻辑分区，因此用堆的划分方法，把方法区称为“永久代”。</li><li>内存回收效率低。 方法区中的信息一般需要长期存在，回收一遍之后可能只有少量信息无效。主要回收目标是：对常量池的回收；对类型的卸载。</li><li>Java 虚拟机规范对方法区的要求比较宽松。 和堆一样，允许固定大小，也允许动态扩展，还允许不实现垃圾回收。</li></ul><p>运行时常量池</p><p>方法区中存放类信息 常量 静态变量 即时编译器编译后的代码</p><p>常量存放在运行时常量池中</p><p>当类被 Java 虚拟机加载后， .class 文件中的常量就存放在方法区的运行时常量池中。而且在运行期间，可以向常量池中添加新的常量。如 String 类的 <code>intern()</code> 方法就能在运行期间向常量池中添加字符串常量。</p></li></ul><p><img src="https://img2018.cnblogs.com/i-beta/1377625/201911/1377625-20191124233524095-2135873909.png" alt="img"></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2021/09/24/%E5%AE%B9%E5%99%A8/"/>
-    <url>/2021/09/24/%E5%AE%B9%E5%99%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>容器主要包括Collection和Map Collection存储对象的集合 Map存储键值对</p><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/image-20191208220948084.png" alt="img"></p><ol><li>Set<ul><li>TreeSet 基于红黑树实现，支持有序性操作，但查找效率不如HashSet，HashSet查找效率为O(1)，TreeSet为O(logN)</li><li>HashSet 基于哈希表实现 支持快速查找，但不支持有序性操作，并失去有序信息</li><li>LinkedList 具有HashSet的查找效率 并使用双向链表维护插入顺序</li></ul></li><li>List<ul><li>ArrayList基于数组实现</li><li>Vector 和ArrayList类似 且线程安全</li><li>LinkedList 基于双向链表实现 只能顺序访问 但可以快速在链表中间插入和删除顺序，可用作栈 队列和双向队列</li></ul></li><li>Queue<ul><li>LinkedList 可实现双向队列</li><li>PriorityQueue 基于栈结构实现 可用于实现优先队列</li></ul></li></ol><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/image-20201101234335837.png" alt="img"></p><ul><li>TreeMap 基于红黑树实现</li><li>HashMap 基于哈希表实现</li><li>HashTable 和HashMap类似 且线程安全。是遗留类 应使用ConcurrentHashMap来支持线程安全 效率更高 因为引入了分段锁</li><li>LinkedHashMap 使用双向链表来维护元素的顺序 顺序为插入顺序或最近最少使用（LRU）顺序</li></ul><h4 id="Collection（单列集合）"><a href="#Collection（单列集合）" class="headerlink" title="Collection（单列集合）"></a>Collection（单列集合）</h4><p><u>List（有序 可重复）</u></p><p>ArrayList ：动态数组 查找快 增删慢 效率高，缺点是插入麻烦 线程不安全 可使用Collection.synchronizedList（List I)返回线程安全的ArrayList 或者concurrent下的CopyOnWriteArrayList</p><p>Vector：底层是数组 查询快 增删慢，线程安全 效率低</p><p>LinkedList：底层是双向链表 查询慢 增删快 ，线程不安全 效率高</p><p><u>Set（无序，唯一，线程不安全）</u></p><p>HashSet：底层数据结构是哈希表 线程不安全</p><p>哈希表依赖两个方法 hashCode()和equals()</p><p>执行顺序 首先判断hashCode是否相同 是则继续执行equals() 是否相同</p><p>LinkedHashSet：底层是链表和哈希表  线程不安全</p><p>由链表保证元素有序</p><p>由哈希表保证元素唯一</p><p>TreeSet：底层是红黑树（自平衡二叉树）</p><p>元素唯一性：比较的返回值是否是0来决定</p><p>有序性：1.自然排序（元素具备比较性）让元素所属类实现Comparable接口</p><p>2.比较器排序（集合具备比较性）</p><p>让集合接受一个Comparator的实现类对象</p><p>Map（双列集合）</p><p>A:Map集合的数据结构仅仅针对键有效 与值无关</p><p>B:存储的是键值对形式的元素，键唯一，值可重复</p><p>HashMap</p><p>jdk1.8以下：（数组+单向链表） 哈希表</p><p>jdk1.8+ 数组+（单向链表/红黑树） 根据情况会选择链表和红黑树之间切换</p><p>LinkedHashMap</p><p>链表和哈希表</p><p>链表保证有序</p><p>哈希表保证元素唯一</p><p>Hashtable</p><p>哈希表</p><p>线程安全 效率低</p><p>TreeMap</p><p>红黑树</p>]]></content>
+    <content type="html"><![CDATA[<p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="C:\Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于hevc编码中有帧内预测 对于fps游戏的录制，准心会因为预测，造成画面暂留 效果是准心向反方向偏移</p><p><img src="C:\Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20211011200211953.png" alt="image-20211011200211953"></p>]]></content>
     
     
     
@@ -61,32 +35,6 @@
     <url>/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/</url>
     
     <content type="html"><![CDATA[<p>自从小时候接触到互联网，就很向往黑客，能够通过各种技术破解层层安全网，控制目标主机。</p><p>这几天自搭环境，尝试了使用kali通过永恒之蓝漏洞实现对win7 x64的控制，大概就是使用msfconsole选择meterpreter和payload，拿到权限后可执行exe，开启服务，实现入侵。测试时发现没有win7 32位系统可利用的永恒之蓝漏洞，找到了论坛上有自制的，但尝试失败。<br>这次渗透的尝试算是当了一次脚本小子，有一点收获，得知了打补丁的重要性，并关注大型0day漏洞</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vue开发踩坑</title>
-    <link href="/2021/07/18/vue%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/"/>
-    <url>/2021/07/18/vue%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</url>
-    
-    <content type="html"><![CDATA[<p>1.使用值需在vue.script data中初始化 否则会当作html文本输出</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>ajax重点</title>
-    <link href="/2021/07/18/ajax%E9%87%8D%E7%82%B9/"/>
-    <url>/2021/07/18/ajax%E9%87%8D%E7%82%B9/</url>
-    
-    <content type="html"><![CDATA[<p>1.ajax请求需要ResponseEntity返回类或者设置@ResponseBody<br>modelandview中setviewname可以设置跳转地址<br>2.ajax请求请求modelandview类型 返回的是setviewname的html<br>3.ajax获取返回类型为map的值时，需要变换返回值为json格式，如var result = JSON.parse(data);</p>]]></content>
     
     
     
