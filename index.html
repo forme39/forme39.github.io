@@ -501,30 +501,19 @@ Quick
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-<script>
-    L2Dwidget.init({
-        "model": {
-　　　　　　　//jsonpath控制显示模型
-            jsonPath: "https://raw.githubusercontent.com/forme39/forme39.github.io/test/live2dw/kawoashi_ver6/kawoashi_ver6_0101.model.json",
-        },
-        "display": {
-            "position": "right", //看板娘的表现位置
-            "width": 200,  //宽度
-            "height": 350, //高度
-            "hOffset": -50,
-            "vOffset": -20
-        },
-        "mobile": {
-            "show": true,
-        },
-        "react": {
-            "opacityDefault": 1,//不透明度，可调
-            "opacityOnHover": 0.2
-        }
-    });
-</script>
+  
+<!-- Live2DCubismCore script -->
+<script src="https://cdn.jsdelivr.net/gh/wangstong/live2dm3/live2d/js/live2dcubismcore.js"></script>
+<!-- Build script -->
+<script src="https://cdn.jsdelivr.net/gh/wangstong/live2dm3/live2d/js/bundle.js"></script>
+<canvas id="live2d" width="500" height="500" class="live2d" style="position: fixed; opacity: 1; right: -150px; bottom: 20px; z-index: 99999; pointer-events: none;"></canvas>
 
+<script type="text/javascript">
+  var resourcesPath = 'https://cdn.jsdelivr.net/gh/wangstong/live2dm3/live2d/model/'; // 指定资源文件（模型）保存的路径
+  var backImageName = ''; // 指定背景图片
+  var modelDir = ['Hiyori']; // 指定需要加载的模型
+  initDefine(resourcesPath, backImageName, modelDir); // 初始化模型
+</script>
 <!-- <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"test/","model":{"jsonPath":"/live2dw/test/kawoashi_ver6_0101.model3.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.9","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body> -->
 
 </html>
