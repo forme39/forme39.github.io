@@ -229,19 +229,23 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/" target="_self">
-          使用qqbot
+        <a href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/" target="_self">
+          B站HEVC硬解
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/" target="_self">
+        <a href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/" target="_self">
           
           
             
           
-          找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用
+          装上插件后 支持全局HEVC硬解
+但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码
+B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC
+可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解
 
+一个小bug外接显示器时 笔记本观看视频使用的是独显硬解 同
         </a>
       </p>
 
@@ -266,23 +270,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/" target="_self">
-          B站HEVC硬解
+        <a href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/" target="_self">
+          使用qqbot
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/" target="_self">
+        <a href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/" target="_self">
           
           
             
           
-          装上插件后 支持全局HEVC硬解
-但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码
-B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC
-可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解
+          找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用
 
-一个小bug外接显示器时 笔记本观看视频使用的是独显硬解 同
         </a>
       </p>
 
@@ -516,5 +516,5 @@ wxml使用data-id来存值 js用e.currentTarget.dataset.id来取值
 <script  src="/js/boot.js" ></script>
 
 
-<!-- hexo injector body_end start --><script data-pjax src="/pluginsSrc/oh-my-live2d/dist/index.min.js"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"https://raw.githubusercontent.com/forme39/live2d_model/refs/heads/main/kawoashi_ver6_beta/kawoashi_ver6_0101.model3.json","position":[0,0],"scale":0.15,"stageStyle":{"width":500,"height":1000},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["你好呀，我是空城~","欢迎来到我的小站~"]}}});</script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- hexo injector body_end start --><script data-pjax src="/pluginsSrc/oh-my-live2d/dist/index.min.js"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"https://raw.githubusercontent.com/forme39/live2d_model/refs/heads/main/kawoashi_ver6_beta/kawoashi_ver6_0101.model3.json","position":[0,0],"scale":0.15,"stageStyle":{"width":500,"height":1000},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["test~","杂鱼 杂鱼~"]}}});</script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

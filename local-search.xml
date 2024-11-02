@@ -23,11 +23,11 @@
   
   
   <entry>
-    <title>使用qqbot</title>
-    <link href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/"/>
-    <url>/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/</url>
+    <title>B站HEVC硬解</title>
+    <link href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
+    <url>/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
     
-    <content type="html"><![CDATA[<p>找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用</p>]]></content>
+    <content type="html"><![CDATA[<p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于hevc编码中有帧内预测 对于fps游戏的录制，准心会因为预测，造成画面暂留 效果是准心向反方向偏移</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20211011200211953.png" alt="image-20211011200211953"></p>]]></content>
     
     
     
@@ -36,11 +36,11 @@
   
   
   <entry>
-    <title>B站HEVC硬解</title>
-    <link href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
-    <url>/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
+    <title>使用qqbot</title>
+    <link href="/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/"/>
+    <url>/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/</url>
     
-    <content type="html"><![CDATA[<p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于hevc编码中有帧内预测 对于fps游戏的录制，准心会因为预测，造成画面暂留 效果是准心向反方向偏移</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20211011200211953.png" alt="image-20211011200211953"></p>]]></content>
+    <content type="html"><![CDATA[<p>找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用</p>]]></content>
     
     
     
