@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title>B站HEVC硬解</title>
-    <link href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
-    <url>/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
+    <title>出差记录</title>
+    <link href="/2024/11/02/%E5%87%BA%E5%B7%AE%E8%AE%B0%E5%BD%95/"/>
+    <url>/2024/11/02/%E5%87%BA%E5%B7%AE%E8%AE%B0%E5%BD%95/</url>
     
-    <content type="html"><![CDATA[<p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="C:\Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于hevc编码中有帧内预测 对于fps游戏的录制，准心会因为预测，造成画面暂留 效果是准心向反方向偏移</p><p><img src="C:\Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20211011200211953.png" alt="image-20211011200211953"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="飞机落地"><a href="#飞机落地" class="headerlink" title="飞机落地"></a>飞机落地</h3><p><img src="1.jpg" alt="1"></p><h3 id="试听耳机"><a href="#试听耳机" class="headerlink" title="试听耳机"></a>试听耳机</h3><p><img src="2.jpg" alt="2"></p><h3 id="街拍-十字路口"><a href="#街拍-十字路口" class="headerlink" title="街拍 十字路口"></a>街拍 十字路口</h3><p><img src="3.jpg" alt="3"></p><h3 id="上海人民广场-来福士"><a href="#上海人民广场-来福士" class="headerlink" title="上海人民广场-来福士"></a>上海人民广场-来福士</h3><p><img src="4.jpg" alt="4"></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>生活</tag>
+      
+    </tags>
     
   </entry>
   
@@ -30,11 +36,24 @@
   
   
   <entry>
+    <title>B站HEVC硬解</title>
+    <link href="/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/"/>
+    <url>/2021/07/28/B%E7%AB%99HEVC%E7%A1%AC%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p>装上插件后 支持全局HEVC硬解</p><p><del>但B站只对1080P高码率以下的视频做了HEVC编码 1080P高码率及以上视频仍用的是AVC编码</del></p><p>B站所有视频都有HEVC编码，由于之前测试使用的是新版本chrome，插件由于版本较新(Chromium v94)，无法开启B站HEVC</p><p>可使用Edge浏览器 官方最新版本为v93，完美使用HEVC硬解</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20210923231202295.png" alt="image-20210923231202295"></p><h4 id="一个小bug"><a href="#一个小bug" class="headerlink" title="一个小bug"></a>一个小bug</h4><p>外接显示器时 笔记本观看视频使用的是独显硬解 同时核显和独显都有3D性能的使用</p><p>尝试在系统中强制使用核显运行浏览器时，发现视频会绿屏 单独在笔记本屏幕上观看没有问题</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于hevc编码中有帧内预测 对于fps游戏的录制，准心会因为预测，造成画面暂留 效果是准心向反方向偏移</p><p><img src="Users\zhu\AppData\Roaming\Typora\typora-user-images\image-20211011200211953.png" alt="image-20211011200211953"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>初识渗透</title>
     <link href="/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/"/>
     <url>/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/</url>
     
-    <content type="html"><![CDATA[<p>自从小时候接触到互联网，就很向往黑客，能够通过各种技术破解层层安全网，控制目标主机。</p><p>这几天自搭环境，尝试了使用kali通过永恒之蓝漏洞实现对win7 x64的控制，大概就是使用msfconsole选择meterpreter和payload，拿到权限后可执行exe，开启服务，实现入侵。测试时发现没有win7 32位系统可利用的永恒之蓝漏洞，找到了论坛上有自制的，但尝试失败。<br>这次渗透的尝试算是当了一次脚本小子，有一点收获，得知了打补丁的重要性，并关注大型0day漏洞</p>]]></content>
+    <content type="html"><![CDATA[<p>自从小时候接触到互联网，就很向往黑客，能够通过各种技术破解层层安全网，控制目标主机。</p><p>尝试了使用kali通过永恒之蓝漏洞实现对win7 x64的控制，</p><p>大概就是使用msfconsole选择meterpreter和payload，拿到权限后可执行exe，开启服务，实现入侵。</p><p>测试时发现没有win7 32位系统可利用的永恒之蓝漏洞，找到了论坛上有自制的，但尝试失败。</p><p>总结：脚本小子的一次渗透尝试，及时更新补丁很重要！</p>]]></content>
     
     
     
@@ -48,19 +67,6 @@
     <url>/2021/07/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91/</url>
     
     <content type="html"><![CDATA[<ol><li>使用formsubmit提交表单 e.detail.value为空</li><li>提交的表单不能超过1个input</li><li>wxml使用data-id来存值 js用e.currentTarget.dataset.id来取值</li><li>在当前页面执行操作，需要刷新时，this.onload方法会报错，使用的是navigateBack方法</li><li>在退出登录时 清空用户信息后 通过检测用户信息不存在来清空界面行不通，<br>因为tabbar不能跳转到tabbar的界面，所以切换时更新数据使用的是onshow，所以直接清空请求得到的数据更妥当</li><li>请求数据时，应该将请求到的数据保存到that数据域中，因为函数中和函数外数据区域不相同</li></ol>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2021/07/18/hello-world/"/>
-    <url>/2021/07/18/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
     
