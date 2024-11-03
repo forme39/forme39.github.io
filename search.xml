@@ -6,9 +6,9 @@
       <title><![CDATA[Anime]]></title>
       <url>/2024/11/03/Anime/</url>
       <content type="html"><![CDATA[<p>记录一些收藏的动画</p>
-<h3 id="《魔法少女小圆》"><a href="#《魔法少女小圆》" class="headerlink" title="《魔法少女小圆》"></a>《魔法少女小圆》</h3><p><img src="madoka.png" alt="image-1"></p>
-<h3 id="《比宇宙更远的地方》"><a href="#《比宇宙更远的地方》" class="headerlink" title="《比宇宙更远的地方》"></a>《比宇宙更远的地方》</h3><p><img src="%E5%B0%8F%E5%8D%97%E6%9E%81.png" alt="image-1"></p>
-<h3 id="《来自风平浪静的明天》"><a href="#《来自风平浪静的明天》" class="headerlink" title="《来自风平浪静的明天》"></a>《来自风平浪静的明天》</h3><p><img src="nagisu.png" alt="image-1"></p>
+<h3 id="《魔法少女小圆》"><a href="#《魔法少女小圆》" class="headerlink" title="《魔法少女小圆》"></a>《魔法少女小圆》</h3><p><img src="madoka.png" alt="圆神启动!"></p>
+<h3 id="《比宇宙更远的地方》"><a href="#《比宇宙更远的地方》" class="headerlink" title="《比宇宙更远的地方》"></a>《比宇宙更远的地方》</h3><p><img src="%E5%B0%8F%E5%8D%97%E6%9E%81.png" alt="小南极"></p>
+<h3 id="《来自风平浪静的明天》"><a href="#《来自风平浪静的明天》" class="headerlink" title="《来自风平浪静的明天》"></a>《来自风平浪静的明天》</h3><p><img src="nagisu.png" alt="美海 意难平"></p>
 ]]></content>
       
         
@@ -54,15 +54,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[使用qqbot]]></title>
-      <url>/2021/07/28/%E4%BD%BF%E7%94%A8qqbot/</url>
-      <content type="html"><![CDATA[<p>找了个存活至今的qqbot，加载查图等插件，终于搞成了一个能用的bot。由于社区插件较为复杂，部分插件的入门文档不够完善，配置需要一定基础，也是花了点时间才搞成。由于云服务器已过期，只能运行在本地主机上，也能用</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[初识渗透]]></title>
       <url>/2021/07/28/%E5%88%9D%E8%AF%86%E6%B8%97%E9%80%8F/</url>
       <content type="html"><![CDATA[<p>自从小时候接触到互联网，就很向往黑客，能够通过各种技术破解层层安全网，控制目标主机。</p>
@@ -70,22 +61,6 @@
 <p>大概就是使用msfconsole选择meterpreter和payload，拿到权限后可执行exe，开启服务，实现入侵。</p>
 <p>测试时发现没有win7 32位系统可利用的永恒之蓝漏洞，找到了论坛上有自制的，但尝试失败。</p>
 <p>总结：脚本小子的一次渗透尝试，及时更新补丁很重要！</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[微信小程序踩坑]]></title>
-      <url>/2021/07/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91/</url>
-      <content type="html"><![CDATA[<ol>
-<li>使用formsubmit提交表单 e.detail.value为空</li>
-<li>提交的表单不能超过1个input</li>
-<li>wxml使用data-id来存值 js用e.currentTarget.dataset.id来取值</li>
-<li>在当前页面执行操作，需要刷新时，this.onload方法会报错，使用的是navigateBack方法</li>
-<li>在退出登录时 清空用户信息后 通过检测用户信息不存在来清空界面行不通，<br>因为tabbar不能跳转到tabbar的界面，所以切换时更新数据使用的是onshow，所以直接清空请求得到的数据更妥当</li>
-<li>请求数据时，应该将请求到的数据保存到that数据域中，因为函数中和函数外数据区域不相同</li>
-</ol>
 ]]></content>
       
         
